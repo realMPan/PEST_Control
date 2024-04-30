@@ -204,26 +204,29 @@ public class StateMachine {
         //Checks if the Path to Goal exists and end with our goalState
         if (pathToGoal == null || !(pathToGoal.indexOf(goalState) == pathToGoal.size()-1)){
             //Replans the path if not
-            System.out.println("REPLAN");
             planPathToGoal();
+            System.out.println("REPLAN");
         }else{
             //Checks if we are at/moving directly to the goalState
             if(currentState.equals(goalState)){
                 //runs the state's periodic method to keep it in place
                 currentState.periodic();
+                System.out.println("MOVE GOAL");
                 //Otherwise, it runs the path
             }else{
                 //Checks if we are already at the current state
                 if(!currentState.at()){
                     //If not, lets us reach the current state before moving to the goalState
                     currentState.periodic();
+                    System.out.println("MOVING TO STEPSTATE");
                 }else{
                     //If we are at the current state, it changes our targetState to the next step in the path
                     currentState = pathToGoal.get(pathToGoal.indexOf(currentState)+1);
+                    System.out.println("STATE SWITCH");
                 }
             }  
         }
-        System.out.println(pathToGoal == null || (!pathToGoal.contains(goalState) && !currentState.equals(goalState)));
+        
     }
                 
     /**

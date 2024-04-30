@@ -24,18 +24,19 @@ public class TimedState extends State {
         super(name, target, null, null);
         this.target = target;
         overrideControlFunction(() ->{this.runTimer();});
-        overrideGetterFunction(() -> {return this.getTime();});
+        overrideGetterFunction(() -> {return timer.get();});
 
         
     }
     private double getTime(){
-        return timer.get();
+       return 0;
     }
     private void runTimer(){
-        if(getTime() > target || !active){
-            timer.restart();
-            active = true;
+        if(timer.get()>target){
+            timer.stop();
+            timer.reset();
         }
+        timer.start();
     }   
     
 }
