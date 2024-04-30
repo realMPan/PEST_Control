@@ -37,6 +37,7 @@ public class TimedState extends State {
             timer.reset();
         }
         timer.start();
+        System.out.println(timer.get());
     }   
     
 }

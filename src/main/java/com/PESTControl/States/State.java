@@ -146,11 +146,7 @@ public abstract class State {
      * For PIDControlled States, it is reccomended to have a tolerance passed into the State constructor if your controller is not perfectly tuned
      */
     public boolean at(){
-        if (currentValueGetter != null){
-            return currentValueGetter.getAsDouble() == target;
-        }else{
-            return currentValue == target;
-        }
+        return currentValueGetter.getAsDouble() == target;
     }
 
     /**

@@ -218,7 +218,7 @@ public class StateMachine {
                 if(!currentState.at()){
                     //If not, lets us reach the current state before moving to the goalState
                     currentState.periodic();
-                    System.out.println("MOVING TO STEPSTATE");
+                    //System.out.println("MOVING TO STEPSTATE");
                 }else{
                     //If we are at the current state, it changes our targetState to the next step in the path
                     currentState = pathToGoal.get(pathToGoal.indexOf(currentState)+1);
