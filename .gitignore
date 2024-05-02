@@ -140,6 +140,7 @@ $RECYCLE.BIN/
 
 
 # Other Folders #
+/testProject
 
 
 # Ignore Gradle GUI config
