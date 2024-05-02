@@ -1,0 +1,15 @@
+{
+  "robotWidth": 0.749,
+  "robotLength": 0.749,
+  "holonomicMode": true,
+  "pathFolders": [
+    "Gackley Auto",
+    "TwoPieceOne"
+  ],
+  "autoFolders": [],
+  "defaultMaxVel": 5.39,
+  "defaultMaxAccel": 4.0,
+  "defaultMaxAngVel": 800.0,
+  "defaultMaxAngAccel": 400.0,
+  "maxModuleSpeed": 4.5
+}
